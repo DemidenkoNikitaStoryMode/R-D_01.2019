@@ -19,9 +19,9 @@
             return new TowerStats()
             {
                 FireRate = 1f,
-                MinDamage = 1,
-                MaxDamage = 2,
-                MaxHealth = 1,
+                MinDamage = 10,
+                MaxDamage = 20,
+                MaxHealth = 50,
                 SlowFactor = 0f
             };
         }

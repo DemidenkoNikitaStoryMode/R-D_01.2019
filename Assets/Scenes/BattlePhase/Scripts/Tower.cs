@@ -18,13 +18,13 @@ public class Tower : BattleUnit
 
     private void Start()
     {
-        var gameModel = new PlayerPrefsModelLoader().LoadGameModel();
+        var gameModel = new PlayerPrefsModelLoader().LoadGameModel() ?? GameModel.DefaultGameModel();
 
-        MaxHealth = gameModel.MaxHealth;
-        FireRate = gameModel.FireRate;
-        MinDamage = gameModel.MinDamage;
-        MaxDamage = gameModel.MaxDamage;
-        SlowFactor = gameModel.SlowFactor;
+        MaxHealth = gameModel.TowerStats.MaxHealth;
+        FireRate = gameModel.TowerStats.FireRate;
+        MinDamage = gameModel.TowerStats.MinDamage;
+        MaxDamage = gameModel.TowerStats.MaxDamage;
+        SlowFactor = gameModel.TowerStats.SlowFactor;
 
         Health = MaxHealth;
     }
