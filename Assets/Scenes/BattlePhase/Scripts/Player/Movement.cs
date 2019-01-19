@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
@@ -18,4 +16,8 @@ public class Movement : MonoBehaviour
         player.position = Vector3.Lerp(player.position, newPositions, 0.1f);
     }
 
+    public void MoveTo(Vector3 newPos)
+    {
+        player.position = newPos;
+    }
 }
