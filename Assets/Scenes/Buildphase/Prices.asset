@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473ba13703481ba419f93baf44afd035, type: 3}
   m_Name: Prices
   m_EditorClassIdentifier: 
-  SlowRateUpgradePrice: 0
-  FireRateUpgradePrice: 0
-  DamageUpgradePrice: 0
-  HeathUpgradePrice: 0
+  fireRateUpgradePrice: 0
+  fireRateUpgradeValue: 0
+  slowRateUpgradePrice: 0
+  slowRateUpgradeValue: 0
+  damageUpgradePrice: 0
+  damageUpgradeValue: 0
+  heathUpgradePrice: 0
+  heathUpgradeValue: 0

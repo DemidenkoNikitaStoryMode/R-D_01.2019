@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 86031490}
   - component: {fileID: 86031491}
+  - component: {fileID: 86031492}
   m_Layer: 5
   m_Name: TowerStats
   m_TagString: Untagged
@@ -176,6 +177,22 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 3
+--- !u!114 &86031492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86031489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e864851eab56064cb80ec50a8499ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: {fileID: 4653156096561834273}
+  Health: {fileID: 2096629289}
+  FireRate: {fileID: 1387373934}
+  SlowDownFactor: {fileID: 1475512675}
 --- !u!1 &118187084 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4653156095660491715, guid: 40628b31e7e4f5a4aa7ef55a827ceea9,
@@ -355,6 +372,7 @@ GameObject:
   - component: {fileID: 267703879}
   - component: {fileID: 267703881}
   - component: {fileID: 267703880}
+  - component: {fileID: 267703882}
   m_Layer: 5
   m_Name: '[Btn]Stats'
   m_TagString: Untagged
@@ -419,6 +437,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267703878}
   m_CullTransparentMesh: 0
+--- !u!114 &267703882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267703878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 267703880}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1921704447}
+        m_MethodName: OnStats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &296688824 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4653156095424598434, guid: 40628b31e7e4f5a4aa7ef55a827ceea9,
@@ -761,6 +832,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 569930225}
+  - component: {fileID: 569930226}
   m_Layer: 5
   m_Name: PlayerWidget
   m_TagString: Untagged
@@ -789,6 +861,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &569930226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569930224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cabaec785f68f0b49a23272c6c314ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &573928611 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4653156095424598434, guid: 40628b31e7e4f5a4aa7ef55a827ceea9,
@@ -1556,9 +1640,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9509885249c104b98aa5c90f418f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultWidget: {fileID: 0}
-  currentlySelected: {fileID: 0}
-  widgets: []
 --- !u!1 &883455582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,6 +1652,7 @@ GameObject:
   - component: {fileID: 883455586}
   - component: {fileID: 883455585}
   - component: {fileID: 883455584}
+  - component: {fileID: 883455587}
   m_Layer: 5
   m_Name: PlayerStats
   m_TagString: Untagged
@@ -1662,6 +1744,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883455582}
   m_CullTransparentMesh: 0
+--- !u!114 &883455587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883455582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f806b71d5c20bf44991e9cde5f080f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &959743407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2473,6 +2567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1299114286}
   - component: {fileID: 1299114287}
+  - component: {fileID: 1299114288}
   m_Layer: 5
   m_Name: TopBar
   m_TagString: Untagged
@@ -2499,7 +2594,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960.2371, y: -58.688885}
+  m_AnchoredPosition: {x: 960.23706, y: -58.688843}
   m_SizeDelta: {x: 1920.4742, y: 117.37777}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1299114287
@@ -2525,6 +2620,19 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+--- !u!114 &1299114288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299114285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce53d341a4407044ad352788909bad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Money: {fileID: 0}
 --- !u!1 &1318753088
 GameObject:
   m_ObjectHideFlags: 0
@@ -3753,6 +3861,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1598371025}
   - component: {fileID: 1598371026}
+  - component: {fileID: 1598371027}
   m_Layer: 5
   m_Name: PlayerAbilities
   m_TagString: Untagged
@@ -3803,6 +3912,18 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 3
+--- !u!114 &1598371027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598371024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1834f482ac6ea6b45aa84d97e2d89868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1612176595
 GameObject:
   m_ObjectHideFlags: 0
@@ -3917,6 +4038,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1697279993}
   - component: {fileID: 1697279994}
+  - component: {fileID: 1697279995}
   m_Layer: 5
   m_Name: TowerAbilities
   m_TagString: Untagged
@@ -3967,6 +4089,18 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 3
+--- !u!114 &1697279995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697279992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1834f482ac6ea6b45aa84d97e2d89868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1793698277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4209,7 +4343,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0.25, y: 0.31500244}
+  m_AnchoredPosition: {x: 0.25, y: 0.31506348}
   m_SizeDelta: {x: 0.5, y: 137.77002}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1865329936
@@ -4508,11 +4642,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StorePrices: {fileID: 11400000, guid: 82f4b5eb8bf77ac4ea64acb83e6fcd51, type: 2}
-  Damage: {fileID: 4653156096561834273}
-  Health: {fileID: 2096629289}
-  FireRate: {fileID: 1387373934}
-  SlowDownFactor: {fileID: 1475512675}
-  Money: {fileID: 694490409}
+  widgetManager: {fileID: 826188355}
+  defaultWidget: {fileID: 0}
+  towerStatsWidget: {fileID: 86031492}
+  playerStatsWidget: {fileID: 883455587}
+  playerAbilitiesWidget: {fileID: 0}
+  towerAbilitiesWidget: {fileID: 0}
+  topBarWidget: {fileID: 0}
 --- !u!1 &1956494864
 GameObject:
   m_ObjectHideFlags: 0
@@ -4523,7 +4659,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1956494865}
   m_Layer: 5
-  m_Name: TowerWidget
+  m_Name: UpgradeWidgets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
