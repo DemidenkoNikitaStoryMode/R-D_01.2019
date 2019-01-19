@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
     {
         isDead = true;
         sprite.enabled = false;
-        StartCoroutine(DoSmthAfterTime(Spawn, model.time));
+        StartCoroutine(DoSmthAfterTime(Spawn, model.PlayerStats.RespawnTime));
     }
 
     private void GetEnergy()
@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         if (isDead) return;
-        movement.Move(model.speed);
+        movement.Move(model.PlayerStats.Speed);
     }
 
     #endregion
