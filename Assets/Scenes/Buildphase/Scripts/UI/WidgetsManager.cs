@@ -5,7 +5,11 @@ using UnityEngine;
 public class WidgetsManager : MonoBehaviour
 {
 
+    public BaseWidget defaultWidget;
 
+    public BaseWidget currentlySelected;
+
+    public List<BaseWidget> widgets;
 
     private void Start()
     {
@@ -16,11 +20,11 @@ public class WidgetsManager : MonoBehaviour
     {
         T window = null;
 
-        for (int i = 0; i < GUIWindows.Count; i++)
+        for (int i = 0; i < widgets.Count; i++)
         {
-            if (GUIWindows[i].GetType() == typeof(T))
+            if (widgets[i].GetType() == typeof(T))
             {
-                window = (T)GUIWindows[i];
+                window = (T)widgets[i];
             }
         }
 

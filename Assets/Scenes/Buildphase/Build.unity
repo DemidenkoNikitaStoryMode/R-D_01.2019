@@ -1556,6 +1556,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9509885249c104b98aa5c90f418f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultWidget: {fileID: 0}
+  currentlySelected: {fileID: 0}
+  widgets: []
 --- !u!1 &883455582
 GameObject:
   m_ObjectHideFlags: 0

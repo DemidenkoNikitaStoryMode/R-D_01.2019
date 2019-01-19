@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerWidget : BaseWidget
+public class TowerAbilitiesWidget : BaseWidget
 {
-
+    
 }
