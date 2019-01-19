@@ -1,6 +1,7 @@
 ﻿using System;
 using Assets.Scenes.Buildphase.Scripts.Model;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scenes.Buildphase.Scripts.View
 {
@@ -8,29 +9,46 @@ namespace Assets.Scenes.Buildphase.Scripts.View
     {
         public Action<BaseUpgradeType> UpgradeAction { get; set; }
 
+        [Header("Stats views.")]
+        public StatView Damage;
+        public StatView Health;
+        public StatView FireRate;
+        public StatView SlowDownFactor;
+        public StatView Money;
+
+        private void Start()
+        {
+
+            Damage.upgradeStat.onClick.AddListener(() => UpgradeAction(UpgradeType.Damage));
+            Health.upgradeStat.onClick.AddListener(() => UpgradeAction(UpgradeType.Health));
+            FireRate.upgradeStat.onClick.AddListener(() => UpgradeAction(UpgradeType.FireRate));
+            SlowDownFactor.upgradeStat.onClick.AddListener(() => UpgradeAction(UpgradeType.SlowDown));
+            //Money
+        }
+
         public void SetDamage(int min, int max)
         {
-            throw new System.NotImplementedException();
+            Damage.value.text = min + " ~ " + max;
         }
 
         public void SetHealth(int health)
         {
-            throw new System.NotImplementedException();
+            Health.value.text = health.ToString();
         }
 
         public void SetFireRate(float fireRate)
         {
-            throw new System.NotImplementedException();
+            FireRate.value.text = fireRate.ToString();
         }
 
         public void SetSlowDownFactor(float slowDownPercent)
         {
-            throw new System.NotImplementedException();
+            SlowDownFactor.value.text = slowDownPercent.ToString() + "%";
         }
 
         public void SetMoney(int money)
         {
-            throw new System.NotImplementedException();
+            Money.value.text = money.ToString();
         }
     }
 }
