@@ -3,7 +3,7 @@
 public class View : MonoBehaviour
 {
     [SerializeField] Transform cameraTransform;
-    [SerializeField] Camera camera;
+    [SerializeField] Camera cam;
 
     [Header("Settings")]
     [SerializeField] float cameraSpeed;
@@ -15,7 +15,7 @@ public class View : MonoBehaviour
         float x = 0f;
         float y = 0f;
 
-        Vector2 viewPort = camera.ScreenToViewportPoint(Input.mousePosition);
+        Vector2 viewPort = cam.ScreenToViewportPoint(Input.mousePosition);
 
         if (viewPort.x > 0.9f) x = 1f;
         if (viewPort.x < 0.1f) x = -1f;

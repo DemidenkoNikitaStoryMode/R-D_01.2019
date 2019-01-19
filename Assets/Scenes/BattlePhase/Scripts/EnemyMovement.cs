@@ -33,7 +33,7 @@ public class EnemyMovement : MonoBehaviour
         {
             var tower = coll.GetComponent<Tower>();
             shouldMove = false;
-            Enemy.Attack(tower);
+            Enemy.DealDamage(tower);
         }
     }
 }

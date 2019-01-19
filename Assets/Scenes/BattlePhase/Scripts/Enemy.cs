@@ -1,14 +1,23 @@
 ﻿using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : BattleUnit
 {
-    public int MinDamage = 5;
-    public int MaxDamage = 10;
 
-    public void Attack(Tower tower)
+    public int MaxHealth = 25;
+
+    private void Start()
     {
-        var damage = Random.Range(MinDamage, MaxDamage);
-        tower.TakeDamage(damage);
+        Health = MaxHealth;
+    }
+
+    public override void DealDamage(BattleUnit target)
+    {
+        base.DealDamage(target);
+        gameObject.SetActive(false);
+    }
+
+    public override void Die()
+    {
         gameObject.SetActive(false);
     }
 }

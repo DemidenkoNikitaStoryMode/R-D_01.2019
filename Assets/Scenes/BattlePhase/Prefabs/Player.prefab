@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 2007503183}
-  camera: {fileID: 1453238634}
+  cam: {fileID: 1453238634}
   cameraSpeed: 0.25
   zoneHeight: 5
   zoneWidth: 7
