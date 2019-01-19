@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using Assets.Scripts.ModelLoader;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,21 +11,22 @@ public class PlayerController : MonoBehaviour
     [Header("Player settings")]
     [SerializeField] Transform spawnPoint;
     [SerializeField] SpriteRenderer sprite;
-    [SerializeField] float speed;
-    [SerializeField] float energy;
-    [SerializeField] float disableTime;
+
+    private GameModel model;
 
     private bool isDead;
 
     private void Awake()
     {
         interactions.callback = Interact;
+        model = new PlayerPrefsModelLoader().LoadGameModel() ?? GameModel.DefaultGameModel();
     }
 
     private void Update()
     {
         Move();
         View();
+        HotKeys();
     }
 
     #region Interaction
@@ -43,7 +45,7 @@ public class PlayerController : MonoBehaviour
     {
         isDead = true;
         sprite.enabled = false;
-        StartCoroutine(DoSmthAfterTime(Spawn, disableTime));
+        StartCoroutine(DoSmthAfterTime(Spawn, model.PlayerStats.RespawnTime));
     }
 
     private void GetEnergy()
@@ -78,7 +80,7 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         if (isDead) return;
-        movement.Move(speed);
+        movement.Move(model.PlayerStats.Speed);
     }
 
     #endregion
@@ -90,5 +92,14 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
+    #region HotKey
+    private void HotKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            view.MoveTo(movement.GetPlayerPosition());
+        }
+    }
+    #endregion
 
 }
