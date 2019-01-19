@@ -1,5 +1,7 @@
 ﻿public class GameModel
 {
+    public int Money { get; set; }
+
     public int MaxHealth { get; set; }
 
     public int MinDamage { get; set; }
