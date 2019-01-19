@@ -1,11 +1,15 @@
 ﻿using System;
 using Assets.Scenes.Buildphase.Scripts.Model;
 using Assets.Scenes.Buildphase.Scripts.View;
+using Assets.Scripts.Model;
 
 namespace Assets.Scenes.Buildphase.Scripts
 {
     public class UpgradeManager
     {
+        private TowerStats TowerStats => model.TowerStats;
+        private PlayerStats PlayerStats => model.PlayerStats;
+
         private readonly GameModel model;
         private readonly IUpgradeView upgradeView;
         private readonly IStorePrices storePrices;
@@ -23,17 +27,15 @@ namespace Assets.Scenes.Buildphase.Scripts
 
         private void InitUi()
         {
-            upgradeView.UpgradeAction = UpgradeBase;
+            upgradeView.UpgradeBaseAction = UpgradeBase;
             UpdateUi();
         }
 
         private void UpdateUi()
         {
-            upgradeView.SetDamage(model.MinDamage, model.MaxDamage);
-            upgradeView.SetFireRate(model.FireRate);
-            upgradeView.SetHealth(model.MaxHealth);
+            upgradeView.UpdatePlayerStats(PlayerStats);
+            upgradeView.UpdateTowerStats(TowerStats);
             upgradeView.SetMoney(model.Money);
-            upgradeView.SetSlowDownFactor(model.SlowFactor);
         }
 
         private int GetBaseUpgradePrice(BaseUpgradeType baseUpgradeType)
@@ -68,17 +70,17 @@ namespace Assets.Scenes.Buildphase.Scripts
             switch (baseUpgradeType)
             {
                 case BaseUpgradeType.Damage:
-                    model.MinDamage += storePrices.DamageUpgradePrice;
-                    model.MaxDamage += storePrices.DamageUpgradePrice;
+                    TowerStats.MinDamage += storePrices.DamageUpgradePrice;
+                    TowerStats.MaxDamage += storePrices.DamageUpgradePrice;
                     break;
                 case BaseUpgradeType.FireRate:
-                    model.FireRate -= storePrices.FireRateUpgradeValue;
+                    TowerStats.FireRate -= storePrices.FireRateUpgradeValue;
                     break;
                 case BaseUpgradeType.Health:
-                    model.MaxHealth += storePrices.HeathUpgradeValue;
+                    TowerStats.MaxHealth += storePrices.HeathUpgradeValue;
                     break;
                 case BaseUpgradeType.SlowDown:
-                    model.SlowFactor += storePrices.SlowRateUpgradeValue;
+                    TowerStats.SlowFactor += storePrices.SlowRateUpgradeValue;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(baseUpgradeType),

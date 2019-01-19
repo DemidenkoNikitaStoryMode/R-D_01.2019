@@ -1,5 +1,6 @@
 ﻿using System;
 using Assets.Scenes.Buildphase.Scripts.Model;
+using Assets.Scripts.Model;
 using UnityEngine;
 
 namespace Assets.Scenes.Buildphase.Scripts.View
@@ -9,7 +10,21 @@ namespace Assets.Scenes.Buildphase.Scripts.View
         private bool IsOnTowerScreen = true;
 
         public StorePrices StorePrices;
-        public Action<BaseUpgradeType> UpgradeAction { get; set; }
+        public Action<BaseUpgradeType> UpgradeBaseAction { get; set; }
+        public Action<PlayerUpgradeType> UpgradePlayerAction { get; set; }
+
+        public void UpdatePlayerStats(PlayerStats playerStats)
+        {
+            //throw new NotImplementedException();
+        }
+
+        public void UpdateTowerStats(TowerStats towerStats)
+        {
+            SetDamage(towerStats.MinDamage, towerStats.MaxDamage);
+            SetHealth(towerStats.MaxHealth);
+            SetFireRate(towerStats.FireRate);
+            SetSlowDownFactor(towerStats.SlowFactor);
+        }
 
         [Header("Widgets.")]
         [SerializeField]
@@ -40,17 +55,15 @@ namespace Assets.Scenes.Buildphase.Scripts.View
             widgetManager.ShowWidget(defaultWidget);
 
             topBarWidget.EnableTowerWidget.onClick.AddListener(EnableTowerWidgets);
-            topBarWidget.EnableTowerWidget.onClick.AddListener(EnablePlayerWidgets);
+            topBarWidget.EnablePlayerWidget.onClick.AddListener(EnablePlayerWidgets);
             bottomBarWidget.Stats.onClick.AddListener(ShowStatsWidget);
             bottomBarWidget.Abilities.onClick.AddListener(ShowAbilitiesWidget);
 
-            towerStatsWidget.Damage.upgradeStat.onClick.AddListener(() => UpgradeAction(BaseUpgradeType.Damage));
-            towerStatsWidget.Health.upgradeStat.onClick.AddListener(() => UpgradeAction(BaseUpgradeType.Health));
-            towerStatsWidget.FireRate.upgradeStat.onClick.AddListener(() => UpgradeAction(BaseUpgradeType.FireRate));
-            towerStatsWidget.SlowDownFactor.upgradeStat.onClick.AddListener(() => UpgradeAction(BaseUpgradeType.SlowDown));
+            towerStatsWidget.Damage.upgradeStat.onClick.AddListener(() => UpgradeBaseAction(BaseUpgradeType.Damage));
+            towerStatsWidget.Health.upgradeStat.onClick.AddListener(() => UpgradeBaseAction(BaseUpgradeType.Health));
+            towerStatsWidget.FireRate.upgradeStat.onClick.AddListener(() => UpgradeBaseAction(BaseUpgradeType.FireRate));
+            towerStatsWidget.SlowDownFactor.upgradeStat.onClick.AddListener(() => UpgradeBaseAction(BaseUpgradeType.SlowDown));
             //topBarWidget.Money.upgradeStat.onClick.AddListener(() => UpgradeAction(BaseUpgradeType.Money));
-
-
         }
 
         public void SetDamage(int min, int max)
@@ -83,11 +96,11 @@ namespace Assets.Scenes.Buildphase.Scripts.View
         {
             if (IsOnTowerScreen)
             {
-                widgetManager.ShowWidget(towerAbilitiesWidget);
+                widgetManager.ShowWidget(towerStatsWidget);
             }
             else
             {
-                widgetManager.ShowWidget(playerAbilitiesWidget);
+                widgetManager.ShowWidget(playerStatsWidget);
             }
         }
 

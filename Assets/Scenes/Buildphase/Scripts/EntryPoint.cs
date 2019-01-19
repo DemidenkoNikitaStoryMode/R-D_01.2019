@@ -1,6 +1,7 @@
 ﻿using Assets.Scenes.Buildphase.Scripts.View;
 using Assets.Scripts.ModelLoader;
 using UnityEngine;
+using Assets.Scripts.Model;
 
 namespace Assets.Scenes.Buildphase.Scripts
 {
@@ -14,7 +15,7 @@ namespace Assets.Scenes.Buildphase.Scripts
         private void SetupBuildScene(IGameModelLoader modelLoader)
         {
             var view = FindObjectOfType<UpgradeView>();
-            var gameModel = modelLoader.LoadGameModel() ?? GameModel.DefaultModel();
+            var gameModel = modelLoader.LoadGameModel() ?? GameModel.DefaultGameModel();
             var controller = new UpgradeManager(gameModel, view, view.StorePrices);
         }
     }

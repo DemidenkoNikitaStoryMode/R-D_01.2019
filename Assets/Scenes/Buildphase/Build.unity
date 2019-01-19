@@ -2780,8 +2780,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce53d341a4407044ad352788909bad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnableTowerWidget: {fileID: 772586696}
-  EnablePlayerWidget: {fileID: 623090473}
+  EnableTowerWidget: {fileID: 623090473}
+  EnablePlayerWidget: {fileID: 772586696}
   Money: {fileID: 694490409}
 --- !u!1 &1318753088
 GameObject:
