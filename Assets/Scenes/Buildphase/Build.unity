@@ -476,18 +476,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 267703880}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1921704447}
-        m_MethodName: OnStats
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &296688824 stripped
@@ -759,6 +748,7 @@ GameObject:
   - component: {fileID: 482507841}
   - component: {fileID: 482507843}
   - component: {fileID: 482507842}
+  - component: {fileID: 482507844}
   m_Layer: 5
   m_Name: '[Btn]Abilities'
   m_TagString: Untagged
@@ -823,6 +813,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482507840}
   m_CullTransparentMesh: 0
+--- !u!114 &482507844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482507840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 482507842}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &569930224
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,9 +864,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 569930225}
-  - component: {fileID: 569930226}
   m_Layer: 5
-  m_Name: PlayerWidget
+  m_Name: PlayerWidgets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -861,18 +892,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &569930226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 569930224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cabaec785f68f0b49a23272c6c314ed3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &573928611 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4653156095424598434, guid: 40628b31e7e4f5a4aa7ef55a827ceea9,
@@ -896,8 +915,9 @@ GameObject:
   - component: {fileID: 623090470}
   - component: {fileID: 623090472}
   - component: {fileID: 623090471}
+  - component: {fileID: 623090473}
   m_Layer: 5
-  m_Name: '[Btn]Player'
+  m_Name: '[Btn]Tower'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -960,6 +980,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623090469}
   m_CullTransparentMesh: 0
+--- !u!114 &623090473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623090469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 623090471}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &673120137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1486,8 +1548,9 @@ GameObject:
   - component: {fileID: 772586693}
   - component: {fileID: 772586695}
   - component: {fileID: 772586694}
+  - component: {fileID: 772586696}
   m_Layer: 5
-  m_Name: '[Btn]Tower'
+  m_Name: '[Btn]Player'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1550,6 +1613,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772586692}
   m_CullTransparentMesh: 0
+--- !u!114 &772586696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772586692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 772586694}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &826188351
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,6 +2436,7 @@ GameObject:
   - component: {fileID: 1251177088}
   - component: {fileID: 1251177090}
   - component: {fileID: 1251177089}
+  - component: {fileID: 1251177091}
   m_Layer: 5
   m_Name: '[Btn]Play'
   m_TagString: Untagged
@@ -2395,6 +2501,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251177087}
   m_CullTransparentMesh: 0
+--- !u!114 &1251177091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251177087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1251177089}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1269268757
 GameObject:
   m_ObjectHideFlags: 0
@@ -2632,7 +2780,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce53d341a4407044ad352788909bad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Money: {fileID: 0}
+  EnableTowerWidget: {fileID: 772586696}
+  EnablePlayerWidget: {fileID: 623090473}
+  Money: {fileID: 694490409}
 --- !u!1 &1318753088
 GameObject:
   m_ObjectHideFlags: 0
@@ -3921,7 +4071,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1598371024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1834f482ac6ea6b45aa84d97e2d89868, type: 3}
+  m_Script: {fileID: 11500000, guid: 02f97fccbef56ab4eb66bd2cf69d30f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1612176595
@@ -4317,8 +4467,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1865329935}
   - component: {fileID: 1865329936}
+  - component: {fileID: 1865329937}
   m_Layer: 5
-  m_Name: LowerBar
+  m_Name: BottomBarWidget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4369,6 +4520,21 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+--- !u!114 &1865329937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865329934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b61c57a1d46f54d9911f510fcf2051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stats: {fileID: 267703882}
+  Abilities: {fileID: 482507844}
+  Play: {fileID: 1251177091}
 --- !u!1 &1881660942
 GameObject:
   m_ObjectHideFlags: 0
@@ -4643,12 +4809,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StorePrices: {fileID: 11400000, guid: 82f4b5eb8bf77ac4ea64acb83e6fcd51, type: 2}
   widgetManager: {fileID: 826188355}
-  defaultWidget: {fileID: 0}
+  defaultWidget: {fileID: 86031492}
   towerStatsWidget: {fileID: 86031492}
   playerStatsWidget: {fileID: 883455587}
-  playerAbilitiesWidget: {fileID: 0}
-  towerAbilitiesWidget: {fileID: 0}
-  topBarWidget: {fileID: 0}
+  playerAbilitiesWidget: {fileID: 1598371027}
+  towerAbilitiesWidget: {fileID: 1697279995}
+  topBarWidget: {fileID: 1299114288}
+  bottomBarWidget: {fileID: 1865329937}
 --- !u!1 &1956494864
 GameObject:
   m_ObjectHideFlags: 0
@@ -4659,7 +4826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1956494865}
   m_Layer: 5
-  m_Name: UpgradeWidgets
+  m_Name: TowerWidgets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

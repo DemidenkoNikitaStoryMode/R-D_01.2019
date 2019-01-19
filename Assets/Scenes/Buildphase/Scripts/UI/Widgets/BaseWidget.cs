@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[DisallowMultipleComponent]
 public class BaseWidget : MonoBehaviour
 {
     public virtual void Activate()

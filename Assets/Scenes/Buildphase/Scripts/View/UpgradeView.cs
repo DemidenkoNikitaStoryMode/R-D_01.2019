@@ -11,11 +11,15 @@ namespace Assets.Scenes.Buildphase.Scripts.View
         public StorePrices StorePrices;
         public Action<BaseUpgradeType> UpgradeAction { get; set; }
 
+        [Header("Widgets.")]
         [SerializeField]
         private WidgetsManager widgetManager;
 
+        [Space]
         [SerializeField]
         private BaseWidget defaultWidget;
+
+        [Space]
         [SerializeField]
         private TowerStatsWidget towerStatsWidget;
         [SerializeField]
@@ -26,6 +30,8 @@ namespace Assets.Scenes.Buildphase.Scripts.View
         private TowerAbilitiesWidget towerAbilitiesWidget;
         [SerializeField]
         private TopBarWidget topBarWidget;
+        [SerializeField]
+        private BottomBarWidget bottomBarWidget;
 
         
 
@@ -33,11 +39,18 @@ namespace Assets.Scenes.Buildphase.Scripts.View
         {
             widgetManager.ShowWidget(defaultWidget);
 
+            topBarWidget.EnableTowerWidget.onClick.AddListener(EnableTowerWidgets);
+            topBarWidget.EnableTowerWidget.onClick.AddListener(EnablePlayerWidgets);
+            bottomBarWidget.Stats.onClick.AddListener(ShowStatsWidget);
+            bottomBarWidget.Abilities.onClick.AddListener(ShowAbilitiesWidget);
+
             towerStatsWidget.Damage.upgradeStat.onClick.AddListener(() => UpgradeAction(BaseUpgradeType.Damage));
             towerStatsWidget.Health.upgradeStat.onClick.AddListener(() => UpgradeAction(BaseUpgradeType.Health));
             towerStatsWidget.FireRate.upgradeStat.onClick.AddListener(() => UpgradeAction(BaseUpgradeType.FireRate));
             towerStatsWidget.SlowDownFactor.upgradeStat.onClick.AddListener(() => UpgradeAction(BaseUpgradeType.SlowDown));
             //topBarWidget.Money.upgradeStat.onClick.AddListener(() => UpgradeAction(BaseUpgradeType.Money));
+
+
         }
 
         public void SetDamage(int min, int max)
@@ -63,19 +76,48 @@ namespace Assets.Scenes.Buildphase.Scripts.View
 
         public void SetMoney(int money)
         {
-            topBarWidget.Money.value.text = money.ToString();
+            topBarWidget.Money.value.text = "Money: " + money.ToString();
         }
 
-        public void OnStats()
+        public void ShowStatsWidget()
         {
-            BaseWidget widget = playerStatsWidget;
-
-            //if (!IsOnTowerScreen)
-                widget = towerStatsWidget;
-
-            widgetManager.ShowWidget(widget);
-
-            //IsOnTowerScreen = !IsOnTowerScreen;
+            if (IsOnTowerScreen)
+            {
+                widgetManager.ShowWidget(towerAbilitiesWidget);
+            }
+            else
+            {
+                widgetManager.ShowWidget(playerAbilitiesWidget);
+            }
         }
+
+        public void ShowAbilitiesWidget()
+        {
+            if (IsOnTowerScreen)
+            {
+                widgetManager.ShowWidget(towerAbilitiesWidget);
+            }
+            else
+            {
+                widgetManager.ShowWidget(playerAbilitiesWidget);
+            }
+        }
+
+        public void EnableTowerWidgets()
+        {
+            widgetManager.ShowWidget(towerStatsWidget);
+            IsOnTowerScreen = true;
+        }
+
+        public void EnablePlayerWidgets()
+        {
+            widgetManager.ShowWidget(playerStatsWidget);
+            IsOnTowerScreen = false;
+        }
+
+        /*public void ShowStatsWidget()
+        {
+            if(towerStatsWidget.gameObject)
+        }*/
     }
 }
