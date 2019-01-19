@@ -27,7 +27,32 @@ namespace Assets.Scenes.Buildphase.Scripts
 
         public void Upgrade(UpgradeType upgradeType)
         {
-            // TODO: Add upgrading
+            switch (upgradeType)
+            {
+                case UpgradeType.Damage:
+
+                    upgradeView.SetDamage(model.MinDamage, model.MaxDamage);
+
+                    break;
+
+                case UpgradeType.Health:
+
+                    upgradeView.SetHealth(model.MaxHealth);
+
+                    break;
+
+                case UpgradeType.FireRate:
+
+                    upgradeView.SetFireRate(model.FireRate);
+
+                    break;
+
+                case UpgradeType.SlowDown:
+
+                    upgradeView.SetSlowDownFactor(model.SlowFactor);
+
+                    break;
+            }
         }
     }
 }

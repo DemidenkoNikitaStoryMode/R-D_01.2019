@@ -16,29 +16,78 @@ namespace Assets.Scenes.Buildphase.Scripts.View
         public StatView SlowDownFactor;
         public StatView Money;
 
+        private void Start()
+        {
+            if (Damage)            
+                Damage.upgradeStat.onClick.AddListener(() => UpgradeAction(UpgradeType.Damage));
+            
+
+            if (Health)          
+                Health.upgradeStat.onClick.AddListener(() => UpgradeAction(UpgradeType.Health));
+            
+
+            if (FireRate)
+                Damage.upgradeStat.onClick.AddListener(() => UpgradeAction(UpgradeType.FireRate));
+            
+
+            if (SlowDownFactor)
+                Damage.upgradeStat.onClick.AddListener(() => UpgradeAction(UpgradeType.SlowDown));
+            
+        }
+
         public void SetDamage(int min, int max)
         {
-            throw new System.NotImplementedException();
+            if (!Damage)
+            {
+                Debug.Log("Damage==null");
+                return;
+            }
+
+            Damage.value.text = min + " ~ " + max;
         }
 
         public void SetHealth(int health)
         {
-            throw new System.NotImplementedException();
+            if (!Health)
+            {
+                Debug.Log("Health==null");
+                return;
+            }
+
+            Health.value.text = health.ToString();
         }
 
         public void SetFireRate(float fireRate)
         {
-            throw new System.NotImplementedException();
+            if (!FireRate)
+            {
+                Debug.Log("FireRate==null");
+                return;
+            }
+
+            FireRate.value.text = fireRate.ToString();
         }
 
         public void SetSlowDownFactor(float slowDownPercent)
         {
-            throw new System.NotImplementedException();
+            if (!SlowDownFactor)
+            {
+                Debug.Log("SlowDownFactor==null");
+                return;
+            }
+
+            SlowDownFactor.value.text = slowDownPercent.ToString() + "%";
         }
 
         public void SetMoney(int money)
         {
-            throw new System.NotImplementedException();
+            if (!Money)
+            {
+                Debug.Log("Money==null");
+                return;
+            }
+
+            Money.value.text = money.ToString();
         }
     }
 }
