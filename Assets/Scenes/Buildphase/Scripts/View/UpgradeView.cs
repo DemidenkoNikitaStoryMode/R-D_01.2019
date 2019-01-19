@@ -6,7 +6,7 @@ namespace Assets.Scenes.Buildphase.Scripts.View
 {
     public class UpgradeView : MonoBehaviour, IUpgradeView
     {
-        public Action<UpgradeType> UpgradeAction { get; set; }
+        public Action<BaseUpgradeType> UpgradeAction { get; set; }
 
         public void SetDamage(int min, int max)
         {
