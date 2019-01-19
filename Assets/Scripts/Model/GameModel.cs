@@ -12,4 +12,18 @@
 
     // In percents
     public float SlowFactor { get; set; }
+
+    // Default values
+    public static GameModel DefaultModel()
+    {
+        return new GameModel()
+        {
+            FireRate = 1f,
+            MinDamage = 1,
+            MaxDamage = 2,
+            MaxHealth = 1,
+            Money = 0,
+            SlowFactor = 0f
+        };
+    }
 }
