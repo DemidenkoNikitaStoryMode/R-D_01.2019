@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         View();
+        HotKeys();
     }
 
     #region Interaction
@@ -90,5 +91,14 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
+    #region HotKey
+    private void HotKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            view.MoveTo(movement.GetPlayerPosition());
+        }
+    }
+    #endregion
 
 }
