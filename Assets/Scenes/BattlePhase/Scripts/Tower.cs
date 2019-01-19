@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts.ModelLoader;
 using UnityEngine;
 
 public class Tower : BattleUnit
@@ -7,6 +8,8 @@ public class Tower : BattleUnit
     public static Tower Instance { get; private set; }
 
     public int MaxHealth { get; private set; }
+    public float FireRate { get; private set; }
+    public float SlowFactor { get; private set; }
 
     private void Awake()
     {
@@ -15,7 +18,14 @@ public class Tower : BattleUnit
 
     private void Start()
     {
-        MaxHealth = 50;
+        var gameModel = new PlayerPrefsModelLoader().LoadGameModel();
+
+        MaxHealth = gameModel.MaxHealth;
+        FireRate = gameModel.FireRate;
+        MinDamage = gameModel.MinDamage;
+        MaxDamage = gameModel.MaxDamage;
+        SlowFactor = gameModel.SlowFactor;
+
         Health = MaxHealth;
     }
 
