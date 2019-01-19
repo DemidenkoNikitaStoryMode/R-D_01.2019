@@ -17,7 +17,9 @@ public class WidgetsManager : MonoBehaviour
 
     public void ShowWidget(BaseWidget widget)
     {
+        if(currentlySelected)
         currentlySelected.Deactivate();
+
         currentlySelected = widget;
         currentlySelected.Activate();
     }
