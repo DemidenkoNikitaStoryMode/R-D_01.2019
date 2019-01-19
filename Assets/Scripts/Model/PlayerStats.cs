@@ -11,7 +11,7 @@
             return new PlayerStats()
             {
                 Speed = 0.5f,
-                RespawnTime = 10f
+                RespawnTime = 5f
             };
         }
     }
