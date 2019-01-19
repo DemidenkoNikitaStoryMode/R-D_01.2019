@@ -5,7 +5,7 @@ namespace Assets.Scenes.Buildphase.Scripts.View
 {
     public interface IUpgradeView
     {
-        Action<UpgradeType> UpgradeAction { get; set; }
+        Action<BaseUpgradeType> UpgradeAction { get; set; }
 
         void SetDamage(int min, int max);
         void SetHealth(int health);

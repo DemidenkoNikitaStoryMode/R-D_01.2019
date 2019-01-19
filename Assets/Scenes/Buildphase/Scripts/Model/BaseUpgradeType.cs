@@ -1,6 +1,6 @@
 ﻿namespace Assets.Scenes.Buildphase.Scripts.Model
 {
-    public enum UpgradeType
+    public enum BaseUpgradeType
     {
         Damage, FireRate, Health, SlowDown
     }
