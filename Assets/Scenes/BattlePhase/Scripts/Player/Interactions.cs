@@ -5,11 +5,19 @@ public class Interactions : MonoBehaviour
 {
     [HideInInspector] public Action<InteractionType> callback;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D coll)
     {
-        if (collision.collider.tag == "Enemy") callback(InteractionType.Enemy);
-        if (collision.collider.tag == "Energy") callback(InteractionType.Energy);
-        if (collision.collider.tag == "BuildMaterial") callback(InteractionType.BuildMaterial);
+        if (coll.tag == "Enemy") callback(InteractionType.Enemy);
+        if (coll.tag == "Energy")
+        {
+            callback(InteractionType.Energy);
+            coll.gameObject.SetActive(false);
+        }
+        if (coll.tag == "BuildMaterial")
+        {
+            callback(InteractionType.BuildMaterial);
+            coll.gameObject.SetActive(false);
+        }
     }
 
 }

@@ -47,5 +47,8 @@ MonoBehaviour:
   BuildMaterial: {fileID: 6119362679937995420, guid: 9a6df1e6912db4d01b800308034710ee,
     type: 3}
   Tower: {fileID: 0}
-  EnergyQuantity: 1000
-  BuildMaterialQuantity: 1000
+  MinPoint: {x: -19, y: -11}
+  MaxPoint: {x: 19, y: 11}
+  Distance: 0.3
+  EnergyQuantity: 100
+  BuildMaterialQuantity: 100

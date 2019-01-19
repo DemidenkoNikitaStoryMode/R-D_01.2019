@@ -7,7 +7,9 @@ public class ItemSpawnerScript : MonoBehaviour
 {
     public GameObject Energy;
     public GameObject BuildMaterial;
-    public GameObject Tower;
+    public Collider2D Tower;
+    public Vector2 MinPoint;
+    public Vector2 MaxPoint;
     public float Distance;
     public int EnergyQuantity;
     public int BuildMaterialQuantity;
@@ -33,8 +35,8 @@ public class ItemSpawnerScript : MonoBehaviour
         int i=0;
         while (i < EnergyQuantity)
         {
-            randX = Random.Range(-8.9f, 8.9f);
-            randY = Random.Range(-5f, 5f);
+            randX = Random.Range(MinPoint.x, MaxPoint.x);
+            randY = Random.Range(MinPoint.y, MaxPoint.y);
             spawnPoint = new Vector2(randX, randY);
             if (spawnedList.All(IsInRange))
             {
@@ -46,8 +48,8 @@ public class ItemSpawnerScript : MonoBehaviour
         i = 0;
         while (i < BuildMaterialQuantity)
         {
-            randX = Random.Range(-8.9f, 8.9f);
-            randY = Random.Range(-5f, 5f);
+            randX = Random.Range(MinPoint.x, MaxPoint.x);
+            randY = Random.Range(MinPoint.y, MaxPoint.y);
             spawnPoint = new Vector2(randX, randY);
             if (spawnedList.All(IsInRange))
             {
@@ -60,6 +62,6 @@ public class ItemSpawnerScript : MonoBehaviour
 
     private bool IsInRange(Vector2 s)
     {
-        return Vector2.Distance(s, spawnPoint) >= Distance && !Tower.GetComponent<Collider2D>().bounds.Contains(spawnPoint);
+        return Vector2.Distance(s, spawnPoint) >= Distance && !Tower.bounds.Contains(spawnPoint);
     }
 }
