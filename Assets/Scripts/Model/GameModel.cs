@@ -22,7 +22,7 @@
             MinDamage = 1,
             MaxDamage = 2,
             MaxHealth = 1,
-            Money = 0,
+            Money = 10000,
             SlowFactor = 0f
         };
     }
