@@ -1,12 +1,10 @@
 ﻿using System;
 using UnityEngine;
-using System.Collections.Generic;
 
 public class Interactions : MonoBehaviour
 {
     [HideInInspector] public Action<InteractionType> callback;
-
-    private bool canInteract = true;
+    [HideInInspector] public Collider2D playerCollider;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

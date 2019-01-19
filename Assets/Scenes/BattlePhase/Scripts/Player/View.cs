@@ -27,4 +27,9 @@ public class View : MonoBehaviour
         newPositions.y = Mathf.Clamp(newPositions.y, -zoneHeight, zoneHeight);
         cameraTransform.position = Vector3.Lerp(cameraTransform.position, newPositions, cameraSpeed);
     }
+
+    public void MoveTo(Vector3 newPos)
+    {
+        cameraTransform.position = newPos;
+    }
 }
