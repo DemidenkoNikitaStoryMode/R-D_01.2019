@@ -4,4 +4,8 @@
     {
         Damage, FireRate, Health, SlowDown
     }
+    public enum PlayerUpgradeType
+    {
+        Speed, RespawnTime
+    }
 }

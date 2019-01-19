@@ -1,5 +1,6 @@
 ﻿using System;
 using Assets.Scenes.Buildphase.Scripts.Model;
+using Assets.Scripts.Model;
 using UnityEngine;
 
 namespace Assets.Scenes.Buildphase.Scripts.View
@@ -7,7 +8,18 @@ namespace Assets.Scenes.Buildphase.Scripts.View
     public class UpgradeView : MonoBehaviour, IUpgradeView
     {
         public StorePrices StorePrices;
-        public Action<BaseUpgradeType> UpgradeAction { get; set; }
+        public Action<BaseUpgradeType> UpgradeBaseAction { get; set; }
+        public Action<PlayerUpgradeType> UpgradePlayerAction { get; set; }
+
+        public void UpdatePlayerStats(PlayerStats playerStats)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateTowerStats(TowerStats towerStats)
+        {
+            throw new NotImplementedException();
+        }
 
         [Header("Stats views.")]
         public StatView Damage;
@@ -18,11 +30,10 @@ namespace Assets.Scenes.Buildphase.Scripts.View
 
         private void Start()
         {
-
-            Damage.upgradeStat.onClick.AddListener(() => UpgradeAction(BaseUpgradeType.Damage));
-            Health.upgradeStat.onClick.AddListener(() => UpgradeAction(BaseUpgradeType.Health));
-            FireRate.upgradeStat.onClick.AddListener(() => UpgradeAction(BaseUpgradeType.FireRate));
-            SlowDownFactor.upgradeStat.onClick.AddListener(() => UpgradeAction(BaseUpgradeType.SlowDown));
+            Damage.upgradeStat.onClick.AddListener(() => UpgradeBaseAction(BaseUpgradeType.Damage));
+            Health.upgradeStat.onClick.AddListener(() => UpgradeBaseAction(BaseUpgradeType.Health));
+            FireRate.upgradeStat.onClick.AddListener(() => UpgradeBaseAction(BaseUpgradeType.FireRate));
+            SlowDownFactor.upgradeStat.onClick.AddListener(() => UpgradeBaseAction(BaseUpgradeType.SlowDown));
         }
 
         public void SetDamage(int min, int max)
