@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-public class GameModel : MonoBehaviour
+﻿public class GameModel
 {
     public int MaxHealth { get; set; }
 
