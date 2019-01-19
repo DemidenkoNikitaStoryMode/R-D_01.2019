@@ -15,7 +15,7 @@ namespace Assets.Scenes.Buildphase.Scripts
         {
             var view = FindObjectOfType<UpgradeView>();
             var gameModel = modelLoader.LoadGameModel() ?? GameModel.DefaultModel();
-            var controller = new UpgradeManager(gameModel, view);
+            var controller = new UpgradeManager(gameModel, view, view.StorePrices);
         }
     }
 }

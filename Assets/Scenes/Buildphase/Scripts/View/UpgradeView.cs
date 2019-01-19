@@ -1,12 +1,12 @@
 ﻿using System;
 using Assets.Scenes.Buildphase.Scripts.Model;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Assets.Scenes.Buildphase.Scripts.View
 {
     public class UpgradeView : MonoBehaviour, IUpgradeView
     {
+        public StorePrices StorePrices;
         public Action<BaseUpgradeType> UpgradeAction { get; set; }
 
         [Header("Stats views.")]
@@ -19,11 +19,10 @@ namespace Assets.Scenes.Buildphase.Scripts.View
         private void Start()
         {
 
-            Damage.upgradeStat.onClick.AddListener(() => UpgradeAction(UpgradeType.Damage));
-            Health.upgradeStat.onClick.AddListener(() => UpgradeAction(UpgradeType.Health));
-            FireRate.upgradeStat.onClick.AddListener(() => UpgradeAction(UpgradeType.FireRate));
-            SlowDownFactor.upgradeStat.onClick.AddListener(() => UpgradeAction(UpgradeType.SlowDown));
-            //Money
+            Damage.upgradeStat.onClick.AddListener(() => UpgradeAction(BaseUpgradeType.Damage));
+            Health.upgradeStat.onClick.AddListener(() => UpgradeAction(BaseUpgradeType.Health));
+            FireRate.upgradeStat.onClick.AddListener(() => UpgradeAction(BaseUpgradeType.FireRate));
+            SlowDownFactor.upgradeStat.onClick.AddListener(() => UpgradeAction(BaseUpgradeType.SlowDown));
         }
 
         public void SetDamage(int min, int max)
