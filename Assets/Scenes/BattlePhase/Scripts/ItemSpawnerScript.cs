@@ -8,6 +8,7 @@ public class ItemSpawnerScript : MonoBehaviour
     public GameObject Energy;
     public GameObject BuildMaterial;
     public GameObject Tower;
+    public float Distance;
     public int EnergyQuantity;
     public int BuildMaterialQuantity;
     private Vector2 spawnPoint;
@@ -59,6 +60,6 @@ public class ItemSpawnerScript : MonoBehaviour
 
     private bool IsInRange(Vector2 s)
     {
-        return Vector2.Distance(s, spawnPoint) >= 0.2 && !Tower.GetComponent<Collider2D>().bounds.Contains(spawnPoint);
+        return Vector2.Distance(s, spawnPoint) >= Distance && !Tower.GetComponent<Collider2D>().bounds.Contains(spawnPoint);
     }
 }
