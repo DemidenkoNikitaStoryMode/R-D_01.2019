@@ -346,4 +346,8 @@ MonoBehaviour:
   interactions: {fileID: 8032253666411219282}
   movement: {fileID: 5162257489265797921}
   view: {fileID: 2007503182}
+  spawnPoint: {fileID: 0}
+  sprite: {fileID: 2026508766}
   speed: 1
+  energy: 0
+  disableTime: 3
