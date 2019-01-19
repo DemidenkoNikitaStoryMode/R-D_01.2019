@@ -11,8 +11,8 @@ public class Tower : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
+    public void TakeDamage(int damage)
     {
-        
+        Debug.Log("Ouch! " + damage + " damage");
     }
 }
