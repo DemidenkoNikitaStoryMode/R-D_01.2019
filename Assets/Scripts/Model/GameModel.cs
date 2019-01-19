@@ -1,29 +1,19 @@
-﻿public class GameModel
+﻿using Assets.Scripts.Model;
+
+public class GameModel
 {
     public int Money { get; set; }
 
-    public int MaxHealth { get; set; }
+    public TowerStats TowerStats;
+    public PlayerStats PlayerStats;
 
-    public int MinDamage { get; set; }
-    public int MaxDamage { get; set; }
-
-    // In seconds
-    public float FireRate { get; set; }
-
-    // In percents
-    public float SlowFactor { get; set; }
-
-    // Default values
-    public static GameModel DefaultModel()
+    public static GameModel DefaultGameModel()
     {
         return new GameModel()
         {
-            FireRate = 1f,
-            MinDamage = 1,
-            MaxDamage = 2,
-            MaxHealth = 1,
-            Money = 10000,
-            SlowFactor = 0f
+            Money = 100,
+            PlayerStats = PlayerStats.CreateDefaultPlayerStats(),
+            TowerStats = TowerStats.DefaultTowerStats()
         };
     }
 }
