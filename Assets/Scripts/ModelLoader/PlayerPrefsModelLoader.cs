@@ -1,6 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 using UnityEngine;
+using Assets.Scripts.Model;
 
 namespace Assets.Scripts.ModelLoader
 {

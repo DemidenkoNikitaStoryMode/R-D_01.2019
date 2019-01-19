@@ -27,17 +27,15 @@ namespace Assets.Scenes.Buildphase.Scripts
 
         private void InitUi()
         {
-            upgradeView.UpgradeAction = UpgradeBase;
+            upgradeView.UpgradeBaseAction = UpgradeBase;
             UpdateUi();
         }
 
         private void UpdateUi()
         {
-            upgradeView.SetDamage(TowerStats.MinDamage, TowerStats.MaxDamage);
-            upgradeView.SetFireRate(TowerStats.FireRate);
-            upgradeView.SetHealth(TowerStats.MaxHealth);
+            upgradeView.UpdatePlayerStats(PlayerStats);
+            upgradeView.UpdateTowerStats(TowerStats);
             upgradeView.SetMoney(model.Money);
-            upgradeView.SetSlowDownFactor(TowerStats.SlowFactor);
         }
 
         private int GetBaseUpgradePrice(BaseUpgradeType baseUpgradeType)

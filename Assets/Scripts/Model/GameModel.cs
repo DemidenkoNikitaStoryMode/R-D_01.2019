@@ -1,19 +1,21 @@
-﻿using Assets.Scripts.Model;
-
-public class GameModel
+﻿namespace Assets.Scripts.Model
 {
-    public int Money { get; set; }
-
-    public TowerStats TowerStats;
-    public PlayerStats PlayerStats;
-
-    public static GameModel DefaultGameModel()
+    public class GameModel
     {
-        return new GameModel()
+        public int Money { get; set; }
+
+        public TowerStats TowerStats;
+        public PlayerStats PlayerStats;
+
+        public static GameModel DefaultGameModel()
         {
-            Money = 100,
-            PlayerStats = PlayerStats.CreateDefaultPlayerStats(),
-            TowerStats = TowerStats.DefaultTowerStats()
-        };
+            return new GameModel()
+            {
+                Money = 100,
+                PlayerStats = PlayerStats.CreateDefaultPlayerStats(),
+                TowerStats = TowerStats.DefaultTowerStats()
+            };
+        }
     }
 }
+

@@ -1,6 +1,7 @@
 ﻿using Assets.Scenes.Buildphase.Scripts.View;
 using Assets.Scripts.ModelLoader;
 using UnityEngine;
+using Assets.Scripts.Model;
 
 namespace Assets.Scenes.Buildphase.Scripts
 {
